@@ -7,6 +7,7 @@ public class SwordFly : MonoBehaviour
 {
     Rigidbody2D rb;
     public float jumpPower;
+    public float rotationPower;
     float ratio;
     // Start is called before the first frame update
     void Start()
@@ -17,13 +18,25 @@ public class SwordFly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, ratio));
-        ratio *= 0.97f;
+        //Debug.Log(rb.angularVelocity);
+        //transform.Rotate(new Vector3(0, 0, ratio));
+        //ratio *= 0.97f;
 
         if(Input.GetMouseButtonDown(0)){
-            rb.velocity = Vector2.up * jumpPower;
-            ratio = -10;
+
+            jumpSword();
         }
+    }
+
+    public void jumpSword(int way = 1)
+    {
+        rb.AddTorque(rotationPower * way, ForceMode2D.Force);
+        //rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
+
+        //if(rb.velocity.y <= 0)
+        //    rb.drag
+        rb.velocity = Vector2.up * jumpPower;
+        //ratio = -10;
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
@@ -32,4 +45,5 @@ public class SwordFly : MonoBehaviour
         }
         SceneManager.LoadScene("GameOverScene");
     }
+
 }

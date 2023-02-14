@@ -22,7 +22,7 @@ public class MakeBird : MonoBehaviour
             GameObject newBird = Instantiate(bird);
             newBird.transform.position = new Vector3(6, Random.Range(-1.7f, 5.7f), 0);
             timer = 0;
-            Destroy(newBird, 3);
+            Destroy(newBird, 8);
         }
 
     }

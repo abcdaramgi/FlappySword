@@ -37,15 +37,18 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Score.cs" />
+     <Compile Include="Assets\BestScore.cs" />
      <Compile Include="Assets\MakeHandle.cs" />
+     <Compile Include="Assets\Replay.cs" />
      <Compile Include="Assets\Move.cs" />
      <Compile Include="Assets\ScoreUp.cs" />
      <Compile Include="Assets\SwordFly.cs" />
-     <Compile Include="Assets\MakeBird.cs" />
-     <Compile Include="Assets\Replay.cs" />
      <Compile Include="Assets\CurrentScore.cs" />
-     <Compile Include="Assets\BestScore.cs" />
+     <Compile Include="Assets\MakeBird.cs" />
+     <Compile Include="Assets\HitSystem.cs" />
+     <Compile Include="Assets\knifeSystem.cs" />
      <None Include="Assets\Glacial-mountains-parallax-background_vnitti_v3\Glacial-mountains-parallax-background_vnitti\Readme.txt" />
+     <None Include="Assets\Pixel Font - Tripfive\_README.txt" />
      <None Include="Assets\Pixel Bird\Read Me.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

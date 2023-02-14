@@ -368,6 +368,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/BestScore.cs"
 "Assets/CurrentScore.cs"
+"Assets/HitSystem.cs"
+"Assets/knifeSystem.cs"
 "Assets/MakeBird.cs"
 "Assets/MakeHandle.cs"
 "Assets/Move.cs"
