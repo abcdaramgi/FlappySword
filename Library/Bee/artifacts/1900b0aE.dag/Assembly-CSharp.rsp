@@ -377,6 +377,7 @@
 "Assets/Score.cs"
 "Assets/ScoreUp.cs"
 "Assets/SwordFly.cs"
+"Assets/WalSystem.cs"
 -langversion:9.0
 
 /deterministic

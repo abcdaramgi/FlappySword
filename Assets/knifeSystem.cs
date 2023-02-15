@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class knifeSystem : MonoBehaviour
 {
-    public HitSystem hitSystem;
+    // public HitSystem hitSystem;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +17,10 @@ public class knifeSystem : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Handle")
-        {
-            Debug.Log("삭제");
-            hitSystem.minusKnife();
-        }
-    }
+    // private void OnCollisionEnter2D(Collider2D other) {
+    //     // if(other.tag == "Handle")
+    //     //     return;
+
+    //     SceneManager.LoadScene("GameOverScene");
+    // }
 }

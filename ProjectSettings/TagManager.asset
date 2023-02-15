@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Handle
   - Knife
+  - Item
   layers:
   - Default
   - TransparentFX

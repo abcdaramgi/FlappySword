@@ -37,6 +37,8 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Score.cs" />
+     <Compile Include="Assets\knifeSystem.cs" />
+     <Compile Include="Assets\HitSystem.cs" />
      <Compile Include="Assets\BestScore.cs" />
      <Compile Include="Assets\MakeHandle.cs" />
      <Compile Include="Assets\Replay.cs" />
@@ -45,8 +47,7 @@
      <Compile Include="Assets\SwordFly.cs" />
      <Compile Include="Assets\CurrentScore.cs" />
      <Compile Include="Assets\MakeBird.cs" />
-     <Compile Include="Assets\HitSystem.cs" />
-     <Compile Include="Assets\knifeSystem.cs" />
+     <Compile Include="Assets\WalSystem.cs" />
      <None Include="Assets\Glacial-mountains-parallax-background_vnitti_v3\Glacial-mountains-parallax-background_vnitti\Readme.txt" />
      <None Include="Assets\Pixel Font - Tripfive\_README.txt" />
      <None Include="Assets\Pixel Bird\Read Me.txt" />

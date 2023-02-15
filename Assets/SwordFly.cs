@@ -8,6 +8,7 @@ public class SwordFly : MonoBehaviour
     Rigidbody2D rb;
     public float jumpPower;
     public float rotationPower;
+    public static bool swordWay = false;
     float ratio;
     // Start is called before the first frame update
     void Start()
@@ -19,18 +20,27 @@ public class SwordFly : MonoBehaviour
     void Update()
     {
         //Debug.Log(rb.angularVelocity);
-        //transform.Rotate(new Vector3(0, 0, ratio));
+        // transform.Rotate(new Vector3(0, 0, ratio));
         //ratio *= 0.97f;
 
         if(Input.GetMouseButtonDown(0)){
 
+            // for(int i = 0; i < transform.childCount; i++)
+
             jumpSword();
+            
+            // if(swordWay)
+            //     jumpSword();
+            // else
+            //     jumpSword(-1);
         }
     }
 
     public void jumpSword(int way = 1)
     {
-        rb.AddTorque(rotationPower * way, ForceMode2D.Force);
+        rb.angularVelocity = 0;
+        float rotaPower = rotationPower + Random.Range(-10f,11f);
+        rb.AddTorque(rotaPower * way, ForceMode2D.Force);
         //rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
 
         //if(rb.velocity.y <= 0)

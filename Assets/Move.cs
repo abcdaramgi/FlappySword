@@ -9,6 +9,7 @@ public class Move : MonoBehaviour
     void Start()
     {
         
+        speed = speed + Random.Range(0,Score.score);
     }
 
     // Update is called once per frame
