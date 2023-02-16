@@ -26,7 +26,7 @@ public class SwordFly : MonoBehaviour
         if(Input.GetMouseButtonDown(0)){
 
             // for(int i = 0; i < transform.childCount; i++)
-
+            GetComponent<AudioSource>().Play();
             jumpSword();
             
             // if(swordWay)

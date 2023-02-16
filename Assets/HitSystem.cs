@@ -49,7 +49,9 @@ public class HitSystem : MonoBehaviour
         GameObject k = Instantiate(knife, Vector3.zero, Quaternion.identity, transform.parent);
         // k.GetComponent<knifeSystem>().hitSystem = this;
         knifes.Add(k);
-
+        
+        GetComponent<AudioSource>().Play();
+        
         k.transform.localPosition = new Vector3(0, knifePositionDefault + (knifePositionRange * count++), 0);
         k.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
         gameObject.transform.localPosition = new Vector3(0, hitPositionDefault + (hitPositionRange * count), 0);
