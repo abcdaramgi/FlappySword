@@ -45,6 +45,7 @@ public class HitSystem : MonoBehaviour
 
         for (int i = 0; i < a; i++)
             swordFly.jumpSword();
+        swordFly.jumpSword();
 
         GameObject k = Instantiate(knife, Vector3.zero, Quaternion.identity, transform.parent);
         // k.GetComponent<knifeSystem>().hitSystem = this;

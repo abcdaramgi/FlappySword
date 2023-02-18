@@ -9,16 +9,34 @@ public class SwordFly : MonoBehaviour
     public float jumpPower;
     public float rotationPower;
     public static bool swordWay = false;
+    public Vector3 center_of_mass;
+    Vector3 targetPosition;
+    public GameObject go;
     float ratio;
+    public Transform headPosition;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        gameObject.GetComponent<Rigidbody2D>().centerOfMass = center_of_mass;
+
+        Vector2 gravityDirection = headPosition.position - transform.position;
+        gravityDirection.Normalize();
+
+        Physics2D.gravity = gravityDirection * Physics2D.gravity.magnitude;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector2 gravityDirection = headPosition.position - transform.position;
+        gravityDirection.Normalize();
+
+        Physics2D.gravity = gravityDirection * Physics2D.gravity.magnitude;
+        // targetPosition = new Vector3(transform.position.x, transform.position.y, 180);
+        // transform.LookAt(targetPosition);
+        // gameObject.GetComponent<Rigidbody2D>().centerOfMass = center_of_mass;
         //Debug.Log(rb.angularVelocity);
         // transform.Rotate(new Vector3(0, 0, ratio));
         //ratio *= 0.97f;
@@ -28,7 +46,7 @@ public class SwordFly : MonoBehaviour
             // for(int i = 0; i < transform.childCount; i++)
             GetComponent<AudioSource>().Play();
             jumpSword();
-            
+
             // if(swordWay)
             //     jumpSword();
             // else
@@ -46,6 +64,8 @@ public class SwordFly : MonoBehaviour
         //if(rb.velocity.y <= 0)
         //    rb.drag
         rb.velocity = Vector2.up * jumpPower;
+
+
         //ratio = -10;
     }
 

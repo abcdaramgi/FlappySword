@@ -14,7 +14,6 @@ public class ScoreUp : MonoBehaviour
                 // HitSystem.instance.knifes.Clear();
                 HitSystem.instance.minusKnife();
                 GetComponent<AudioSource>().Play();
-
                 gameObject.transform.position = new Vector3(100, 100, 100);
                 Destroy(gameObject, 3);
             }
