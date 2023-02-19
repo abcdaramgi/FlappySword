@@ -54,8 +54,43 @@ public class SwordFly : MonoBehaviour
         }
     }
 
+    Quaternion downRotation = Quaternion.Euler(new Vector3(0,0,180));
+    IEnumerator Rotate(float duration)
+    {
+        while(rb.velocity.y >= 0)
+        {
+            yield return null;
+        }
+
+        float startRotation = transform.eulerAngles.z % 360;
+        float endRotation = Random.Range(170f,190f);
+
+        if(0 <= startRotation && startRotation < 45)
+        {
+            endRotation = Random.Range(0f,10f);
+        }
+        if(315 <= startRotation && startRotation < 360)
+        {
+            endRotation = Random.Range(350f,360f);
+        }
+
+        float t = 0.0f;
+            
+        rb.angularVelocity = 0;
+        
+        while ( t  < duration )
+        {
+            t += Time.deltaTime * (-rb.velocity.y/5);
+            float zRotation = Mathf.Lerp(startRotation, endRotation, t / duration) % 360.0f;
+            transform.eulerAngles = new Vector3(0, 0, zRotation);
+            yield return null;
+        }
+    }
+
     public void jumpSword(int way = 1)
     {
+        StopAllCoroutines();
+
         rb.angularVelocity = 0;
         float rotaPower = rotationPower + Random.Range(-10f,11f);
         rb.AddTorque(rotaPower * way, ForceMode2D.Force);
@@ -67,6 +102,8 @@ public class SwordFly : MonoBehaviour
 
 
         //ratio = -10;
+
+        StartCoroutine("Rotate",1.5f);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
